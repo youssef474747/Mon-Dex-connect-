@@ -224,7 +224,6 @@ grid.addEventListener("click", function(event) {
 });
 
 
-
 // 7. Ajouter une créature à l'équipe
 function addToTeam(creature) {
     let alreadyExists = team.some(function(item) {
