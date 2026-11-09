@@ -199,7 +199,6 @@ filters.addEventListener("click", function(event) {
     createCards();
 });
 
-
 grid.addEventListener("click", function(event) {
     let card = event.target.closest(".creature-card");
 
