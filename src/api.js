@@ -13,11 +13,17 @@ async function fetchData(url) {
     }
 }
 
-
 function transformPokemon(pokemon) {
     return {
         id: pokemon.id,
         name: pokemon.name,
-        type: pokemon.types[0].type.name
+        type: pokemon.types[0].type.name,
+        image: pokemon.sprites.other["official-artwork"].front_default,
+
+         stats:{
+    hp: pokemon.stats[0].base_stat ,
+    attack: pokemon.stats[1].base_stat ,
+    defense : pokemon.stats[2].base_stat 
+}
     };
 }
