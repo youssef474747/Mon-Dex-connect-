@@ -18,7 +18,7 @@
         </div>
         <div>
           <p class="font-display text-2xl font-extrabold leading-none">Mon Dex</p>
-          <p class="text-sm text-white">[Votre univers] · <span id="creature-count">6</span> créatures</p>
+          <p class="text-sm text-white">[Votre univers] · <span id="creature-count">0</span> créatures</p>
         </div>
       </div>
 
@@ -63,152 +63,34 @@
     <div class="flex flex-col lg:flex-row gap-8 items-start">
 
       <!-- GRILLE DES CRÉATURES -->
-      <section id="grid" aria-label="Créatures" class="grid min-w-0 w-full flex-1 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3">
-
-        <!-- #001 -->
-        <article class="flex flex-col gap-3 rounded-card bg-blue-700 p-3 pb-4">
-          <div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEdeBVpdym0B3W1_ct2YL7w-KvCcUTNhzzKJdnp7LOCA&s=10');" class="relative flex h-48 items-center justify-center rounded-xl">
-            <img src="images/pokémon.jpg" alt="P" class="h-full w-full object-cover rounded-xl">
-            <span class="absolute left-3 top-2 font-mono text-sm text-muted">#001</span>
-          </div>
-
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">pikatchu</h3>
-            <span class="rounded-full bg-sky-200 px-3 py-1 text-sm font-bold text-black">Electric</span>
-          </div>
-
-          <p class="text-sm text-black font-semibold">Base · Total 309</p>
-          <button type="button" class="btn-outline bg-ground">Ajouter à l'équipe</button>
-        </article>
-
-        <!-- #002 -->
-        <article class="flex flex-col gap-3 rounded-card bg-red-600 p-3 pb-4">
-          <div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjoa4ojEa_O1C100jimaVfvdFM-gDIJcRGfBS_XiJMLg&s');" class="relative flex h-48 items-center justify-center rounded-xl bg-cover bg-center">
-            <span class="absolute left-3 top-2 font-mono text-sm text-muted">#002</span>
-          </div>
-
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Charizard</h3>
-            <span class="rounded-full bg-orange-400 px-3 py-1 text-sm font-bold text-black">Feu</span>
-          </div>
-
-          <p class="text-sm text-black font-semibold">Base · Total 314</p>
-          <button type="button" class="btn-outline bg-ground">Ajouter à l'équipe</button>
-        </article>
-
-        <!-- #003 -->
-        <article class="flex flex-col gap-3 rounded-card bg-green-400 p-3 pb-4">
-          <div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpHaQeXFw2FR_yJ14tJMsVC2xwZ9_U3bRHrW2NAS8JEg&s');" class="relative w-full h-48 rounded-xl bg-cover bg-center bg-no-repeat">
-            <span class="absolute left-3 top-2 font-mono text-sm text-muted">#003</span>
-          </div>
-
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Bulbasaur</h3>
-            <span class="rounded-full bg-green-600 px-3 py-1 text-sm font-bold text-black">Plante</span>
-          </div>
-
-          <p class="text-sm text-black font-semibold">Base · Total 318</p>
-          <button type="button" class="btn-outline bg-ground">Ajouter à l'équipe</button>
-        </article>
-
-        <!-- #004 -->
-        <article class="flex flex-col gap-3 rounded-card bg-blue-200 p-3 pb-4">
-          <div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpHaQeXFw2FR_yJ14tJMsVC2xwZ9_U3bRHrW2NAS8JEg&s');" class="relative w-full h-48 rounded-xl bg-cover bg-center bg-no-repeat">
-            <span class="absolute left-3 top-2 font-mono text-sm text-muted">#004</span>
-          </div>
-
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Squirtle</h3>
-            <span class="rounded-full bg-blue-600 px-3 py-1 text-sm font-bold text-black">Water</span>
-          </div>
-
-          <p class="text-sm text-black font-semibold">Niveau 1 · Total 405</p>
-          <button type="button" class="btn-outline bg-ground">Ajouter à l'équipe</button>
-        </article>
-
-        <!-- #005 -->
-        <article class="flex flex-col gap-3 rounded-card bg-purple-500 p-3 pb-4">
-          <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
-            <span class="absolute left-3 top-2 font-mono text-sm text-muted">#005</span>
-          </div>
-
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Greninja</h3>
-            <span class="rounded-full bg-brand-dark px-3 py-1 text-sm font-bold text-black">Glace</span>
-          </div>
-
-          <p class="text-sm text-black font-semibold">Niveau 1 · Total 420</p>
-          <button type="button" class="btn-outline bg-ground">Ajouter à l'équipe</button>
-        </article>
-
-        <!-- #006 -->
-        <article class="flex flex-col gap-3 rounded-card bg-orange-400 p-3 pb-4">
-          <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
-            <span class="absolute left-3 top-2 font-mono text-sm text-muted">#006</span>
-          </div>
-
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Squirtle</h3>
-            <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">Ténèbres</span>
-          </div>
-
-          <p class="text-sm text-black font-semibold">Niveau 2 · Total 525</p>
-          <button type="button" class="btn-outline bg-ground">Ajouter à l'équipe</button>
-        </article>
-
-      </section>
+    <section
+    id="grid"
+    aria-label="Créatures"
+    class="grid min-w-0 w-full flex-1 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3">
+</section>
 
       <aside class="flex w-full min-w-0 flex-col gap-6 lg:w-[360px] xl:w-[420px] lg:shrink-0">
 
         <!-- PANNEAU DE DÉTAIL -->
-        <section id="detail" aria-label="Détail de la créature" class="flex flex-col gap-4 rounded-card border-2 border-ink bg-yellow-200 p-6">
-          <div class="flex items-center justify-between">
-            <span class="font-mono text-sm text-muted">#003 · Détail</span>
-            <button type="button" aria-label="Fermer le détail" class="btn-outline w-11 px-0 bg-red-500">✕</button>
-          </div>
+       <section id="detail" aria-label="Détail de créature" class="flex flex-col gap-4 rounded-card border-ink bg-yellow-200 p-6">
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-sm text-muted ">Détail</span>
+          <button type="button" aria-label="fermer détal" class="btn-outline w-11 px-0 bg-red-500">X</button>
+        </div>
+        <div class="flex h-48 items-center justify-center rounded-2xl bg-brand-light">
 
-          <div class="flex h-48 items-center justify-center rounded-2xl bg-brand-light">
-          </div>
-
-          <div class="flex items-center justify-between">
-            <h2 class="font-display text-3xl font-extrabold">Mossling</h2>
-            <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold">Plante</span>
-          </div>
-
-          <p class="text-gray-700">Une créature calme qui dort sous les feuilles mortes et se réveille quand il pleut.</p>
-
-          <div class="flex flex-col gap-2 text-sm">
-            <div class="grid grid-cols-[80px_1fr_40px] items-center gap-2">
-              <span class="font-bold">PV</span>
-              <span class="h-3 rounded-full bg-ground"><span class="block h-3 w-[30%] rounded-full bg-brand"></span></span>
-              <span class="text-right font-mono">45</span>
-            </div>
-
-            <div class="grid grid-cols-[80px_1fr_40px] items-center gap-2">
-              <span class="font-bold">Attaque</span>
-              <span class="h-3 rounded-full bg-ground"><span class="block h-3 w-[33%] rounded-full bg-brand"></span></span>
-              <span class="text-right font-mono">49</span>
-            </div>
-
-            <div class="grid grid-cols-[80px_1fr_40px] items-center gap-2">
-              <span class="font-bold">Défense</span>
-              <span class="h-3 rounded-full bg-ground"><span class="block h-3 w-[43%] rounded-full bg-brand"></span></span>
-              <span class="text-right font-mono">65</span>
-            </div>
-          </div>
-
-          <button type="button" class="btn-primary bg-green-400 text-black">Ajouter à l'équipe</button>
-        </section>
+        </div>
+        
+      <div class="flex items-center justify-between">
+        <h2 class="font-display text-3xl font-extrabold">Sélectionnez un Pokémon</h2>
+      </div>
+      <p class="text-gray-700">Cliquez sur une carte pour afficher les détails</p>
+      </section>
 
         <!-- MON ÉQUIPE -->
         <section id="team" aria-label="Mon équipe" class="rounded-card bg-gray-300 p-6">
           <h2 class="font-display text-2xl font-extrabold">Mon équipe</h2>
-          <!-- TODO (Partie 1) : terminez cette section en suivant la maquette :
-               compteur x/6, 6 emplacements (vides ou remplis), message de règles. -->
         </section>
-
-      </aside>
-    </div>
 
     <!-- FORMULAIRE DE CRÉATION -->
     <section id="create" aria-label="Nouvelle créature" class="flex flex-col gap-6 rounded-card bg-yellow-200 p-8">
@@ -285,8 +167,7 @@
   </footer>
 
   <!-- data.js doit être chargé AVANT script.js -->
-  <script src="./data.js"></script>
-  <script src="./script.js"></script>
+  
 <script type="module" src="./src/main.js"></script>
 </body>
 </html>
