@@ -4,11 +4,20 @@ async function fetchData(url) {
     try {
         const response = await fetch(url);
         if(!response.ok){
-            throw new Error(`Erreur $(response.status)`);
+            throw new Error(`Erreur ${response.status}`);
         }
         const data = await response.json();
         return data ;
     }catch (error){
         throw error ;
     }
+}
+
+
+function transformPokemon(pokemon) {
+    return {
+        id: pokemon.id,
+        name: pokemon.name,
+        type: pokemon.types[0].type.name
+    };
 }
