@@ -244,7 +244,6 @@ function addToTeam(creature) {
 }
 
 
-
 // 8. Afficher l'équipe
 function displayTeam() {
     teamContainer.innerHTML = "";
