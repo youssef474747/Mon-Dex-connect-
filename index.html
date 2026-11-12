@@ -63,101 +63,11 @@
     <div class="flex flex-col lg:flex-row gap-8 items-start">
 
       <!-- GRILLE DES CRÉATURES -->
-      <section id="grid" aria-label="Créatures" class="grid min-w-0 w-full flex-1 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3">
-
-        <!-- #001 -->
-        <article class="flex flex-col gap-3 rounded-card bg-blue-700 p-3 pb-4">
-          <div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEdeBVpdym0B3W1_ct2YL7w-KvCcUTNhzzKJdnp7LOCA&s=10');" class="relative flex h-48 items-center justify-center rounded-xl">
-            <img src="images/pokémon.jpg" alt="P" class="h-full w-full object-cover rounded-xl">
-            <span class="absolute left-3 top-2 font-mono text-sm text-muted">#001</span>
-          </div>
-
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">pikatchu</h3>
-            <span class="rounded-full bg-sky-200 px-3 py-1 text-sm font-bold text-black">Electric</span>
-          </div>
-
-          <p class="text-sm text-black font-semibold">Base · Total 309</p>
-          <button type="button" class="btn-outline bg-ground">Ajouter à l'équipe</button>
-        </article>
-
-        <!-- #002 -->
-        <article class="flex flex-col gap-3 rounded-card bg-red-600 p-3 pb-4">
-          <div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjoa4ojEa_O1C100jimaVfvdFM-gDIJcRGfBS_XiJMLg&s');" class="relative flex h-48 items-center justify-center rounded-xl bg-cover bg-center">
-            <span class="absolute left-3 top-2 font-mono text-sm text-muted">#002</span>
-          </div>
-
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Charizard</h3>
-            <span class="rounded-full bg-orange-400 px-3 py-1 text-sm font-bold text-black">Feu</span>
-          </div>
-
-          <p class="text-sm text-black font-semibold">Base · Total 314</p>
-          <button type="button" class="btn-outline bg-ground">Ajouter à l'équipe</button>
-        </article>
-
-        <!-- #003 -->
-        <article class="flex flex-col gap-3 rounded-card bg-green-400 p-3 pb-4">
-          <div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpHaQeXFw2FR_yJ14tJMsVC2xwZ9_U3bRHrW2NAS8JEg&s');" class="relative w-full h-48 rounded-xl bg-cover bg-center bg-no-repeat">
-            <span class="absolute left-3 top-2 font-mono text-sm text-muted">#003</span>
-          </div>
-
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Bulbasaur</h3>
-            <span class="rounded-full bg-green-600 px-3 py-1 text-sm font-bold text-black">Plante</span>
-          </div>
-
-          <p class="text-sm text-black font-semibold">Base · Total 318</p>
-          <button type="button" class="btn-outline bg-ground">Ajouter à l'équipe</button>
-        </article>
-
-        <!-- #004 -->
-        <article class="flex flex-col gap-3 rounded-card bg-blue-200 p-3 pb-4">
-          <div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpHaQeXFw2FR_yJ14tJMsVC2xwZ9_U3bRHrW2NAS8JEg&s');" class="relative w-full h-48 rounded-xl bg-cover bg-center bg-no-repeat">
-            <span class="absolute left-3 top-2 font-mono text-sm text-muted">#004</span>
-          </div>
-
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Squirtle</h3>
-            <span class="rounded-full bg-blue-600 px-3 py-1 text-sm font-bold text-black">Water</span>
-          </div>
-
-          <p class="text-sm text-black font-semibold">Niveau 1 · Total 405</p>
-          <button type="button" class="btn-outline bg-ground">Ajouter à l'équipe</button>
-        </article>
-
-        <!-- #005 -->
-        <article class="flex flex-col gap-3 rounded-card bg-purple-500 p-3 pb-4">
-          <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
-            <span class="absolute left-3 top-2 font-mono text-sm text-muted">#005</span>
-          </div>
-
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Greninja</h3>
-            <span class="rounded-full bg-brand-dark px-3 py-1 text-sm font-bold text-black">Glace</span>
-          </div>
-
-          <p class="text-sm text-black font-semibold">Niveau 1 · Total 420</p>
-          <button type="button" class="btn-outline bg-ground">Ajouter à l'équipe</button>
-        </article>
-
-        <!-- #006 -->
-        <article class="flex flex-col gap-3 rounded-card bg-orange-400 p-3 pb-4">
-          <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
-            <span class="absolute left-3 top-2 font-mono text-sm text-muted">#006</span>
-          </div>
-
-          <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Squirtle</h3>
-            <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">Ténèbres</span>
-          </div>
-
-          <p class="text-sm text-black font-semibold">Niveau 2 · Total 525</p>
-          <button type="button" class="btn-outline bg-ground">Ajouter à l'équipe</button>
-        </article>
-
-      </section>
-
+      <section
+    id="grid"
+    aria-label="Créatures"
+    class="grid min-w-0 w-full flex-1 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3">
+</section>
       <aside class="flex w-full min-w-0 flex-col gap-6 lg:w-[360px] xl:w-[420px] lg:shrink-0">
 
         <!-- PANNEAU DE DÉTAIL -->
@@ -270,8 +180,8 @@
   </footer>
 
   <!-- data.js doit être chargé AVANT script.js -->
-  <script src="./data.js"></script>
-  <script src="./script.js"></script>
+
+
 <script type="module" src="./src/main.js"></script>
 </body>
 </html>

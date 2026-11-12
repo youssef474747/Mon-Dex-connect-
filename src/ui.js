@@ -11,9 +11,9 @@ function createCards(pokemons){
         card.innerHTML =`
         <img src="${pokemon.image}" alt ="${pokemon.name}" class ="w-full h-40 object-contain">
         <h3 class ="font-bold text-lg mt-2 capitalize">${pokemon.name} </h3>
-        
-        
-        
-        `
-    })
+
+          `;
+          grid.appendChild(card);
+    });
 }
+export { createCards };
