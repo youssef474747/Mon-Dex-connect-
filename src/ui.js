@@ -22,4 +22,20 @@ function createCards(pokemons , append = false){
 
     creatureCount.textContent = grid.children.length ;
 }
-export { createCards };
+
+function showLoading(){
+    grid.innerHTML = `
+    <p class = "class-span-full text-center">
+    chargement des Pokémons... </p>
+
+    `;
+}
+
+function showError(message){
+    grid.innerHTML =`
+    <p class ="class-span-full text-center text-red-500 ">
+    ${message}
+</p>
+    `;
+}
+export { createCards, showLoading, showError };

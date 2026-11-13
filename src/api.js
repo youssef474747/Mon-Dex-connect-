@@ -29,7 +29,7 @@ function transformPokemon(pokemon) {
 }
 
 async function getPokemons(offset = 0) {
-    const data = await fetchData(`${BASE_URL}/pokemon?limit=20&offset=${offset}`);
+const data = await fetchData(`${BASE_URL}/pokemon?limit=20&offset=${offset}`);
     const promises = data.results.map(async (pokemon) => {
         const pokemonData = await fetchData(pokemon.url);
         return transformPokemon(pokemonData);

@@ -1,12 +1,15 @@
 import { getPokemons, getPokemon } from "./api.js";
-import { createCards } from "./ui.js";
+import { createCards, showLoading, showError } from "./ui.js";
 
 let offset = 0;
 let loadedPokemons = [];
 let selectedType = "all";
+let allPokemons = [];
+let isSearching = false;
 
 const filters = document.getElementById("filters");
 const loadMoreBtn = document.getElementById("load-more");
+const searchInput = document.getElementById("search");
 
 // Afficher les Pokémon selon le filtre
 function filterPokemons() {
@@ -20,30 +23,41 @@ function filterPokemons() {
 // Charger les premiers Pokémon
 async function init() {
     try {
+        showLoading();
+
         const pokemons = await getPokemons(offset);
 
         loadedPokemons = pokemons;
+        allPokemons = [...pokemons];
+
         createCards(pokemons);
 
     } catch (error) {
-        console.error("Erreur :", error);
+        showError("Erreur lors du chargement");
     }
 }
 
 // Charger 20 Pokémon supplémentaires
 loadMoreBtn.addEventListener("click", async function() {
     try {
+        if (isSearching) {
+            isSearching = false;
+            loadedPokemons = [...allPokemons];
+        }
+
         const nextOffset = offset + 20;
 
         const pokemons = await getPokemons(nextOffset);
 
         loadedPokemons.push(...pokemons);
+        allPokemons.push(...pokemons);
+
         offset = nextOffset;
 
         filterPokemons();
 
     } catch (error) {
-        console.error("Erreur :", error);
+        showError("Erreur lors du chargement");
     }
 });
 
@@ -60,3 +74,15 @@ filters.addEventListener("click", function(event) {
 
 // Lancer l'application
 init();
+
+// RECHERCH
+
+searchInput.addEventListener("input", function() {
+    const name = searchInput.value.toLowerCase().trim();
+
+    const results = loadedPokemons.filter(function(pokemon) {
+        return pokemon.name.includes(name);
+    });
+
+    createCards(results);
+});
