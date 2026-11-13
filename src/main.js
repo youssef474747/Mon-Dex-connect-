@@ -1,5 +1,6 @@
 import { getPokemons, getPokemon } from "./api.js";
 import { createCards, showLoading, showError, showDetails } from "./ui.js";
+import { saveLastSearch, getLastSearch, toggleFavorite } from "./storage.js";
 
 let offset = 0;
 let loadedPokemons = [];
@@ -31,7 +32,19 @@ async function init() {
         loadedPokemons = pokemons;
         allPokemons = [...pokemons];
 
-        createCards(pokemons);
+const lastSearch = getLastSearch();
+
+searchInput.value = lastSearch;
+
+if (lastSearch) {
+    const results = loadedPokemons.filter(function(pokemon) {
+        return pokemon.name.includes(lastSearch);
+    });
+
+    createCards(results);
+} else {
+    createCards(pokemons);
+}
 
     } catch (error) {
         showError("Erreur lors du chargement");
@@ -77,9 +90,11 @@ filters.addEventListener("click", function(event) {
 init();
 
 // RECHERCH
-
 searchInput.addEventListener("input", function() {
     const name = searchInput.value.toLowerCase().trim();
+
+    // Sauvegarder la recherche
+    saveLastSearch(name);
 
     const results = loadedPokemons.filter(function(pokemon) {
         return pokemon.name.includes(name);
@@ -87,24 +102,40 @@ searchInput.addEventListener("input", function() {
 
     createCards(results);
 });
-
 // afficher les details
 
 const grid =document.getElementById("grid");
-grid.addEventListener("click" ,async function(event){
-      const card = event.target.closest(".creature-card");
+grid.addEventListener("click" , async function(event){
+    const favoriteButton = event.target.closest(".favorite-btn");
+    if(favoriteButton){
+        const id =Number(favoriteButton.dataset.id);
+        const pokemon = loadedPokemons.find(function(item){
+            return item.id === id ;
+        });
+        if(!pokemon)return ;
+        const favorites = toggleFavorite(pokemon);
+        const saved = favorites.some(function(item){
+            return item.id === id ;
+        });
+
+        favoriteButton.textContent = saved ? "❤️" : "♡";
+        return ;
+    }
+    const card = event.target.closest(".creature-card");
     if(!card) return ;
+
     try{
         const pokemon = await getPokemon(card.dataset.id);
         showDetails(pokemon);
-
     }catch(error){
-        alert("Erreur lors du chargement des details");
+        alert("Erreur lors du chargement des details ");
     }
 });
+
 
 // Effacer la recherche
 clearSearchBtn.addEventListener("click", function() {
     searchInput.value = "";
+    saveLastSearch("");
     filterPokemons();
 });

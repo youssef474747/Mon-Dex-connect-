@@ -1,9 +1,9 @@
 const STORAGE_KEY ="mon-dex-favorites" ;
-
+const SEARCH_KEY = "mon-dex-last-search";
 function getFavorites(){
     try{
         const favorites = localStorage.getItem(STORAGE_KEY);
-        return favorites ? JSON.perse(favorites) :[];
+        return favorites ? JSON.parse(favorites) :[];
     } catch (error) {
         return [];
     }
@@ -28,17 +28,23 @@ return favorites ;
 // verification
 function isFavorite(id){
     const favorites =getFavorites();
-    return pokemon.some(function(pokemon){
+    return favorites.some(function(pokemon){
         return pokemon.id === Number(id) ;
 
     });
 }
-export{ getFavorites , toggleFavorite , isFavorite} ;
+function saveLastSearch(search) {
+    console.log("Saving:", search);
 
+    sessionStorage.setItem(SEARCH_KEY, search);
 
+    console.log("Stored:", sessionStorage.getItem(SEARCH_KEY));
+}
+    
 
-
-
+ function getLastSearch(){
+    return sessionStorage.getItem(SEARCH_KEY) || "" ;
+ }
 
 
 export {

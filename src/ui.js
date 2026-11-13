@@ -1,3 +1,6 @@
+import { isFavorite } from "./storage.js";
+
+
 let grid = document.getElementById("grid");
 let creatureCount = document.getElementById("creature-count");
 let detail = document.getElementById("detail");
@@ -8,9 +11,15 @@ function createCards(pokemons , append = false){
     }
     pokemons.forEach(function(pokemon){
         let card = document.createElement("div");
-        card.className ="creature-card bg-white rounded-xl p-4 shadow-sm border cursor-pointer"
+        card.className = "creature-card relative bg-white rounded-xl p-4 shadow-sm border cursor-pointer";
         card.dataset.id = pokemon.id ;
          card.innerHTML = `
+         <button
+    type="button"
+    class="favorite-btn absolute top-2 right-2 z-10 text-2xl"
+    data-id="${pokemon.id}">
+    ${isFavorite(pokemon.id) ? "❤️" : "♡"}
+</button>
             <img src="${pokemon.image}" alt="${pokemon.name}" class="w-full h-40 object-contain">
             <h3 class="font-bold text-lg mt-2 capitalize">${pokemon.name}</h3>
             <p>Type: ${pokemon.type}</p>
