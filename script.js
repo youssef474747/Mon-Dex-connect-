@@ -34,7 +34,7 @@ function getType(type) {
 }
 
 // 2. createCards()
-function createCards() {
+function createCards(cre) {
     let monsters = creatures.filter(function(creature) {
         let name = creature.name.toLowerCase();
         let text = searchText.toLowerCase();

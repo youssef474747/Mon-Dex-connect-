@@ -1,5 +1,5 @@
 import { getPokemons, getPokemon } from "./api.js";
-import { createCards, showLoading, showError } from "./ui.js";
+import { createCards, showLoading, showError, showDetails } from "./ui.js";
 
 let offset = 0;
 let loadedPokemons = [];
@@ -10,6 +10,7 @@ let isSearching = false;
 const filters = document.getElementById("filters");
 const loadMoreBtn = document.getElementById("load-more");
 const searchInput = document.getElementById("search");
+const clearSearchBtn = document.getElementById("clear-search");
 
 // Afficher les Pokémon selon le filtre
 function filterPokemons() {
@@ -85,4 +86,25 @@ searchInput.addEventListener("input", function() {
     });
 
     createCards(results);
+});
+
+// afficher les details
+
+const grid =document.getElementById("grid");
+grid.addEventListener("click" ,async function(event){
+      const card = event.target.closest(".creature-card");
+    if(!card) return ;
+    try{
+        const pokemon = await getPokemon(card.dataset.id);
+        showDetails(pokemon);
+
+    }catch(error){
+        alert("Erreur lors du chargement des details");
+    }
+});
+
+// Effacer la recherche
+clearSearchBtn.addEventListener("click", function() {
+    searchInput.value = "";
+    filterPokemons();
 });
