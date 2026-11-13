@@ -9,11 +9,31 @@ function getFavorites(){
     }
 }
 
-suprimer 
+// suprimer fav
+function toggleFavorite(pokemon){
+    let favorites = getFavorites();
+    const index = favorites.findIndex(function(item) {
+        return item.id === pokemon.id ;
+    });
+    if(index !== -1){
+        favorites.splice(index , 1);
+    }else{
+        favorites.push(pokemon);
+    }
+    localStorage.setItem(STORAGE_KEY , JSON.stringify(favorites));
 
+return favorites ;
+}
 
+// verification
+function isFavorite(id){
+    const favorites =getFavorites();
+    return pokemon.some(function(pokemon){
+        return pokemon.id === Number(id) ;
 
-
+    });
+}
+export{ getFavorites , toggleFavorite , isFavorite} ;
 
 
 
